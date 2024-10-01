@@ -1,0 +1,15 @@
+package com.example.board;
+
+import java.sql.Timestamp;
+
+public class User {
+
+	// 테이블 만드는건 '엔티티'라함
+	private int id;
+	private String username;
+	private String password;
+	private String email;
+	private RoleType role;
+	// timestamp 시큐리티와 sql이 있는데 sql로 써야함
+	private Timestamp createDate;
+}

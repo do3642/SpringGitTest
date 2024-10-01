@@ -1,0 +1,10 @@
+package com.example.board.domain;
+
+// 클래스에 제네릭을 넣음 T는 Type의 약자
+public class ResponseDTO<T> {
+	
+	// 응갑결과 상태코드
+	private int status;
+	// 응답 데이터
+	private T data;
+}

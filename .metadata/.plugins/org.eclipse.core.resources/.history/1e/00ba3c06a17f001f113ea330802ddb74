@@ -1,0 +1,33 @@
+package com.example.board;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BoardApplicationTests {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Test
+	void contextLoads() {
+//		User user = new User();
+//		user.setUsername("kim");
+//		user.setPassword("1234");
+//		user.setEmail("asd@naver.com");
+//		user.setRole(RoleType.USER);
+//			
+//		// insert 해주는 메서드
+//		userRepository.save(user);
+		
+		List<User> users = userRepository.findAll();
+		System.out.println(users.size());
+		System.out.println(users);
+		
+		
+	}
+
+}

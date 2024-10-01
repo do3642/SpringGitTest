@@ -1,0 +1,11 @@
+const userObject = {
+	init:function(){
+		$('#btn-save').on('click',function(){
+			
+		});
+	},
+	insertUser:function(){
+		alert("회원가입요청");
+	}
+}
+

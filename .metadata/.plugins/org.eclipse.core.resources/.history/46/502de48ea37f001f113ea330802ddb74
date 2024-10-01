@@ -1,0 +1,56 @@
+package com.example.board;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BoardApplicationTests {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Test
+	void contextLoads() {
+//		User user = new User();
+//		user.setUsername("kim");
+//		user.setPassword("1234");
+//		user.setEmail("asd@naver.com");
+//		user.setRole(RoleType.USER);
+//			
+//		// insert 해주는 메서드
+//		userRepository.save(user);
+		
+//		List<User> users = userRepository.findAll();
+//		System.out.println(users.size());
+//		
+//		for(User u : users) {
+//			System.out.println(u);
+//		}
+		
+//		기본키를 이용해 조건을 거는거 까지만 구현됨
+		// select * from users where id=?;
+		Optional<User> result = userRepository.findById(1);
+		// findById에서 Id는 기본키를 가르키는거
+		// 검색결과가 하나이며 없을수도 있어 user 객체가 아닌 옵셔너리 형태로 리턴됨
+		
+//		System.out.println(result.isPresent());
+//		// 있냐 없냐의 true false로 리턴됨
+//		
+//		if(result.isPresent()) {
+//			User u = result.get();
+//			System.out.println(u);
+//		}else {
+//			System.out.println("검색 결과 없음");
+//		}
+//		
+		// username을 기준으로 검색한 결과
+		// 해당 레파스토리에 추상메서드로 만들어 놔야함
+		User result = userRepository.findByUsername("hong");
+		
+		
+	}
+
+}

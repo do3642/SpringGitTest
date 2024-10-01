@@ -1,0 +1,21 @@
+package com.example.board.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.board.domain.User;
+
+@Controller
+public class UserController {
+
+	@GetMapping("/auth/insertuser")
+	public String insertUser() {
+		return "user/insertUser";
+	}
+	
+	@PostMapping("/auth/insertuser")
+	public void insertUser(User user) {
+		
+	}
+}

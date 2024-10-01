@@ -1,0 +1,12 @@
+package com.example.board;
+
+public class User {
+
+	// 테이블 만드는건 '엔티티'라함
+	private int id;
+	private String username;
+	private String password;
+	private String email;
+	private RoleType role;
+	private Timest;
+}

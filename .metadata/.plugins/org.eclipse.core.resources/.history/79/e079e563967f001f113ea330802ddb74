@@ -1,0 +1,27 @@
+package com.example.board;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity // 이것도 두개 있는데 javax껄로 하면됨
+@Table(name = "users") //이것도 2개중  javax고 생성할 때 테이블명 지정가능
+public class User {
+
+	// 테이블 만드는건 '엔티티'라함
+	private int id;
+	private String username;
+	private String password;
+	private String email;
+	private RoleType role;
+	// timestamp 시큐리티와 sql이 있는데 sql로 써야함
+	private Timestamp createDate;
+}

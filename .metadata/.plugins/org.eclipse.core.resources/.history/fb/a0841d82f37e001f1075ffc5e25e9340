@@ -1,0 +1,49 @@
+package com.example.board;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class RESTController {
+	
+	@GetMapping("/rest")
+	public String get() {
+		
+		return "get 요청 처리";
+	}
+	
+	@PostMapping("/rest")
+	public String post() {
+		return "post 요청 처리";
+	}
+	
+	@PutMapping("/rest")
+	public String put() {
+		return "put 요청 처리";
+	}
+	
+	@DeleteMapping("/rest")
+	public String delete() {
+		return "delete 요청 처리";
+	}
+	
+	@GetMapping("/test")
+	public TestVO getTest() {
+		TestVO vo = new TestVO("홍길동","1234");
+		TestVO vo2 = new TestVO("고길동","qwer");
+		TestVO vo3 = new TestVO("도우너","pppp");
+		List<TestVO> list new ArrayList<>();
+		list.add(vo);
+		list.add(vo2);
+		list.add(vo3);
+		
+		return vo;
+	}
+	
+}

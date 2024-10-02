@@ -96,3 +96,25 @@ $('#btn-update').on('click',(e)=>{
 			});
 	
 });
+
+$("#btn-delete").on('click',(e)=>{
+	e.preventDefault();
+		if(!confirm("회원 탈퇴 하시겠습니까?"))
+			return;
+		
+		let user = $("#id").val();
+		console.log(user);
+			
+		$.ajax({
+			type: "Delete",
+			url: "/auth/delete",
+			data: JSON.stringify(user),
+			/*data:user,*/
+			contentType: "application/json; charset=utf-8"
+		}).done(function(){
+			
+			location.href = "/";
+		}).fail(function(error){
+			console.log(error);
+		});
+});

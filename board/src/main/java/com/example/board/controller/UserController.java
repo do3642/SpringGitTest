@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -141,7 +142,23 @@ public class UserController {
 		return new ResponseDTO<>(HttpStatus.OK.value(), "회원 정보 수정 완료");
 	}
 	
-		
+	
+	
+//	@DeleteMapping("/auth/delete")
+//	@ResponseBody
+//	public void deleteUser(@RequestBody User deleteUser,HttpSession session) {
+//		System.out.println(deleteUser);
+////		System.out.println(deleteUser.getId());
+//		userRepository.deleteById(deleteUser.getId());
+//		session.invalidate();
+//	}
+	@DeleteMapping("/auth/delete")
+	public void deleteUser(Integer user,HttpSession session) {
+		System.out.println(user);
+//		System.out.println(deleteUser.getId());
+//		userRepository.deleteById(id.getId());
+		session.invalidate();
+	}
 		
 	
 	

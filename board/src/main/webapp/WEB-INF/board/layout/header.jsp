@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
    <head>
@@ -21,6 +22,7 @@
             <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+         	<c:if test="${sessionScope.principal == null }">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                <li class="nav-item"><a class="nav-link active"
                   aria-current="page" href="/auth/insertuser">회원가입</a></li>
@@ -28,6 +30,14 @@
                <li class="nav-item"><a class="nav-link disabled"
                   aria-disabled="true">Disabled</a></li>
             </ul>
+            </c:if>
+            <c:if test="${sessionScope.principal != null }">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item"><a class="nav-link" href="#">회원정보</a></li>
+               <li class="nav-item"><a class="nav-link" href="/auth/logout">로그아웃</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">게시물 등록</a></li>
+            </ul>
+            </c:if>
             <form class="d-flex" role="search">
                <input class="form-control me-2" type="search" placeholder="Search"
                   aria-label="Search">

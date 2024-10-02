@@ -83,10 +83,16 @@ public class UserController {
 			} // 안쪽 if문 종료
 			
 		} // 바깥 else문 종료
+	}
+	@GetMapping("/auth/logout")
+	public String logout(HttpSession session) {
+		session.invalidate(); // 기존 세션 모든 정보 날리는 메서드
+		return "redirect:/";
+	}
 	
 		
 		
-	}
+	
 	
 	
 }

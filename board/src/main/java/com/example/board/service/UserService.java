@@ -20,4 +20,15 @@ public class UserService {
 		
 		userRepository.save(user);
 	}
+	
+	// username으로 검색한 결과가 있으면 해당 객체를 리턴
+	// 없으면 빈 객체를 리턴
+	public User getUser(String username) {
+		User findUser = userRepository.findByUsername(username).orElseGet(() ->{
+			return new User();
+		});
+		
+		return findUser;
+		
+	}
 }

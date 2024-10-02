@@ -39,3 +39,60 @@ const userObject = {
 
 userObject.init();
 
+
+/*$('#btn-update').on('click',(e)=>{
+	
+	e.preventDefault();
+	if(!confirm("회원 정보를 수정하시겠습니까?"))
+		return;
+	
+	let user = {
+		password: $("#password").val(),
+		email: $("#email").val()
+	};
+	
+	$.ajax({
+		type: "POST", // 소문자 상관없음
+		url: "/auth/update",
+		data: JSON.stringify(user),
+		contentType: "application/json; charset=utf-8"
+	}).done(function(response){ // 실행성공 했을 때 
+			alert(response.data);
+			if(response.status == 200) //중복으로 실패해도 메인페이지로 가서 막아줌
+				location.href = "/"; //성공 후 메인페이지로
+			}).fail(function(error){
+				console.log(error);
+			});
+	
+});*/
+
+
+
+
+
+$('#btn-update').on('click',(e)=>{
+	
+	e.preventDefault();
+	if(!confirm("회원 정보를 수정하시겠습니까?"))
+		return;
+	
+	let user = {
+		id:$("#id").val(),
+		password: $("#password").val(),
+		email: $("#email").val()
+	};
+	
+	$.ajax({
+		type: "PUT", // 소문자 상관없음
+		url: "/auth/update",
+		data: JSON.stringify(user),
+		contentType: "application/json; charset=utf-8"
+	}).done(function(response){ // 실행성공 했을 때 
+			alert(response.data);
+			if(response.status == 200) //중복으로 실패해도 메인페이지로 가서 막아줌
+				location.href = "/"; //성공 후 메인페이지로
+			}).fail(function(error){
+				console.log(error);
+			});
+	
+});

@@ -33,7 +33,7 @@
             </c:if>
             <c:if test="${sessionScope.principal != null }">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item"><a class="nav-link" href="#">회원정보</a></li>
+               <li class="nav-item"><a class="nav-link" href="/auth/userinfo">회원정보</a></li>
                <li class="nav-item"><a class="nav-link" href="/auth/logout">로그아웃</a></li>
                <li class="nav-item"><a class="nav-link" href="#">게시물 등록</a></li>
             </ul>

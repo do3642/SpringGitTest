@@ -5,13 +5,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
+import com.example.board.repository.UserRepository;
 import com.example.board.service.UserService;
 
 @Controller
@@ -19,6 +22,9 @@ public class UserController {
  
 	@Autowired // 서비스 불러옴
 	private UserService userService;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	
 	@GetMapping("/auth/insertuser")
@@ -88,6 +94,51 @@ public class UserController {
 	public String logout(HttpSession session) {
 		session.invalidate(); // 기존 세션 모든 정보 날리는 메서드
 		return "redirect:/";
+	}
+	
+	@GetMapping("/auth/userinfo")
+	public String userInfo(HttpSession session, Model model) {
+		
+		User user = (User) session.getAttribute("principal");
+//		System.out.println(user);
+		
+		User userInfo = userRepository.findById(user.getId()).get();
+		
+		model.addAttribute("userInfo", userInfo);
+		
+		return "user/userinfo";
+	}
+	
+//	@PostMapping("/auth/update")
+//	@ResponseBody
+//	public ResponseDTO<?> updateUser(@RequestBody User user, HttpSession session) {
+//		User loginUser = (User) session.getAttribute("principal");
+//		User userInfo = userRepository.findById(loginUser.getId()).get();
+//		
+//		
+//		
+//		userInfo.setPassword(user.getPassword());
+//		userInfo.setEmail(user.getEmail());
+//		userRepository.save(userInfo);
+//			
+//		return new ResponseDTO<>(HttpStatus.OK.value(),userInfo.getUsername() + "님 정보 수정 성공");
+//		
+//	}
+	
+	@PutMapping("/auth/update")
+	@ResponseBody
+	public ResponseDTO<?> update(@RequestBody User updateData,HttpSession session) {
+//		System.out.println(updateData);
+		User userInfo = userRepository.findById(updateData.getId()).get();
+		if(!updateData.getPassword().equals(""))
+			userInfo.setPassword(updateData.getPassword());
+		
+		userInfo.setEmail(updateData.getEmail());
+		userRepository.save(userInfo);
+		
+		session.setAttribute("principal", userInfo); // 세션 데이터가 로그인할때만 갱신되기 때문에 새로 갱신 시켜줌
+		
+		return new ResponseDTO<>(HttpStatus.OK.value(), "회원 정보 수정 완료");
 	}
 	
 		

@@ -1,14 +1,14 @@
 package com.example.board.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.board.domain.Post;
-import com.example.board.domain.RoleType;
 import com.example.board.domain.User;
 import com.example.board.repository.PostRepository;
-import com.example.board.repository.UserRepository;
 
 @Service
 public class PostService {
@@ -31,6 +31,11 @@ public class PostService {
 		post.setCnt(0); // 굳이 안해도 되긴함
 		// 설정이 끝난 post객체를 db에 저장
 		postRepository.save(post);
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Post> getPostList(){
+		return postRepository.findAll();
 	}
 	
 }

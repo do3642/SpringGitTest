@@ -1,10 +1,13 @@
 package com.example.board.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +18,7 @@ import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
 import com.example.board.repository.PostRepository;
 import com.example.board.service.PostService;
-import com.example.board.service.UserService;
+
 
 
 @Controller
@@ -56,6 +59,17 @@ public class PostController {
 		return new ResponseDTO<>(HttpStatus.OK.value(),"게시물 등록 완료");
 		
 				
+	}
+	
+	@GetMapping({"","/"}) // 이런식으로 괄호로 다수에 걸 수 있음
+	public String getPostList(Model model) {
+		
+		List<Post> postList = postService.getPostList();
+		
+		// html로 데이터를 보내기 위한 모델객체
+		model.addAttribute("postList", postList);
+		
+		return "index";
 	}
 	
 	

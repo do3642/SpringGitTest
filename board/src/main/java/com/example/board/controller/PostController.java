@@ -5,6 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,9 +66,12 @@ public class PostController {
 	}
 	
 	@GetMapping({"","/"}) // 이런식으로 괄호로 다수에 걸 수 있음
-	public String getPostList(Model model) {
+	public String getPostList(Model model,@PageableDefault(size =10, sort = "id", direction = Direction.DESC) Pageable pageable) { // pageable,direction import는 data.domain으로해야함
+		//페이지 에이블 기본값 지정하는 어노테이션 size- 페이지갯수, sort 정렬(id는 게시판번호),direction은 오름,내림 설정
 		
-		List<Post> postList = postService.getPostList();
+		
+		Page<Post> postList = postService.getPostList(pageable);
+		// 페이지 갯수를 db 모든 데이터를 뽑아오는 서비스에 보내줘서 10개씩 데이터를 가져오게끔 설정해줘야함
 		
 		// html로 데이터를 보내기 위한 모델객체
 		model.addAttribute("postList", postList);

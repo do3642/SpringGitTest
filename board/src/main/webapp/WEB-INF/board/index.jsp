@@ -4,7 +4,11 @@
 
 
 	 <div class="container mt-3">
-	 	<c:forEach var ="post" items="${postList}"><!--var는 작명의 영역/변수명임 -->
+	 
+	 <c:if test="${empty postList}"> <!-- null이랑 같냐 조건식과 같음  -->
+	 	<h1>등록된 게시물이 없습니다.</h1>	 
+	 </c:if>
+	 	<c:forEach var ="post" items="${postList.content}"><!--var는 작명의 영역/변수명임 -->
       <div class="card">
          <div class="card-body">
              <h4 class="card-title">${post.title}</h4>
@@ -12,6 +16,17 @@
          </div>
       </div>
       </c:forEach>
+
+      <br>
+      <ul class="pagination justify-content-between">
+         <li class="page-item <c:if test="${postList.first}">disabled</c:if>"> <!--부트스트랩의 클래스로 disabled  -->
+            <a class="page-link" href="?page=${postList.number-1}">이전</a>
+         </li>
+         <li class="page-item <c:if test="${postList.last}">disabled</c:if>">
+            <a class="page-link" href="?page=${postList.number+1}">다음</a>
+         </li>
+      </ul>
    </div>
+   
    
 <%@ include file="./layout/footer.jsp" %>

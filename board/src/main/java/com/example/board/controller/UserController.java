@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.board.domain.ResponseDTO;
@@ -19,6 +21,7 @@ import com.example.board.repository.UserRepository;
 import com.example.board.service.UserService;
 
 @Controller
+//@RequestMapping("/auth") : 여기 컨트롤러에서 시작하는 모든 요청 주소는 /auth로 시작함
 public class UserController {
  
 	@Autowired // 서비스 불러옴
@@ -143,23 +146,27 @@ public class UserController {
 	}
 	
 	
-	
+	//내 버전
 //	@DeleteMapping("/auth/delete")
-//	@ResponseBody
+////@ResponseBody
 //	public void deleteUser(@RequestBody User deleteUser,HttpSession session) {
 //		System.out.println(deleteUser);
 ////		System.out.println(deleteUser.getId());
 //		userRepository.deleteById(deleteUser.getId());
 //		session.invalidate();
 //	}
+
+	// 선생님 버전
 	@DeleteMapping("/auth/delete")
-	public void deleteUser(Integer user,HttpSession session) {
-		System.out.println(user);
-//		System.out.println(deleteUser.getId());
-//		userRepository.deleteById(id.getId());
-		session.invalidate();
-	}
+	@ResponseBody
+	public ResponseDTO<?> delete(@RequestParam int id, HttpSession session){
+		System.out.println(id);
 		
+		userRepository.deleteById(id); // db에서 id에 해당하는 레코드를 삭제
+		session.invalidate(); // 로그인한 세션 정보를 지워야 함
+		
+		return new ResponseDTO<>(HttpStatus.OK.value(),"회원 탈퇴 완료");
+	}
 	
 	
 	

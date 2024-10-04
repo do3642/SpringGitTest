@@ -97,24 +97,46 @@ $('#btn-update').on('click',(e)=>{
 	
 });
 
-$("#btn-delete").on('click',(e)=>{
+/*$("#btn-delete").on('click',(e)=>{
 	e.preventDefault();
 		if(!confirm("회원 탈퇴 하시겠습니까?"))
 			return;
 		
-		let user = $("#id").val();
+		let user = {id:$("#id").val()}
 		console.log(user);
+		
+		
 			
 		$.ajax({
 			type: "Delete",
 			url: "/auth/delete",
-			data: JSON.stringify(user),
-			/*data:user,*/
+			data: JSON.parse(user),
+			data:user,
 			contentType: "application/json; charset=utf-8"
 		}).done(function(){
-			
+			console.log('1');
 			location.href = "/";
 		}).fail(function(error){
+			
 			console.log(error);
 		});
-});
+});*/
+
+// 선생님 버전
+$("#btn-delete").on('click',(e)=>{
+	e.preventDefault();
+	let id = $("#id").val();
+	if(!confirm("회원 탈퇴 하시겠습니까?"))
+		return;
+			
+	$.ajax({
+			type:"DELETE",
+			url: "/auth/delete?id="+id,		
+			}).done(function(response){
+				alert("회원 탈퇴 성공");
+				location.href = "/";
+			}).fail(function(error){
+				console.log(error);
+			});
+	
+})

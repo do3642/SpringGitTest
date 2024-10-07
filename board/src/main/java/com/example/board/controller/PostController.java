@@ -1,6 +1,6 @@
 package com.example.board.controller;
 
-import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,11 +12,15 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.board.domain.PageDTO;
 import com.example.board.domain.Post;
 import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
@@ -76,8 +80,62 @@ public class PostController {
 		// html로 데이터를 보내기 위한 모델객체
 		model.addAttribute("postList", postList);
 		
+		//PageDTO를 이용한거
+		model.addAttribute("pageDTO", new PageDTO(postList));
+//		Page<Post>에 들어있는 Post들을 꺼내서 쓰고 싶으면
+//		저것들이 Page객체에 content라는 멤버 변수에 들어있음
+//		Class Page<T>{
+//			private T content;
+//		}
+//		new Page<Post>(Post post);
+		
+		
 		return "index";
 	}
+	
+	@GetMapping("/post/{id}")
+	public String getPost(@PathVariable int id, Model model) {
+		Post post = postService.getPost(id);
+		
+		model.addAttribute("post",post);
+		
+		return  "post/detail";
+	}
+	
+	@GetMapping("/post/modify/{id}")
+	public String modify(@PathVariable int id, Model model) {
+		Post post = postService.getPost(id);
+		
+		model.addAttribute("post",post);
+		
+		return "post/modify";
+	}
+	
+	@PutMapping("/post")
+	@ResponseBody
+	public ResponseDTO<?> modify(@RequestBody Post post){
+		
+		//Optional<Post> updatePost = postRepository.findById(post.getId());
+		//post.setUser(updatePost.get().getUser());
+		//post.setCnt(updatePost.get().getCnt());
+		//post.setCreateDate(updatePost.get().getCreateDate());
+		postService.updatePost(post);
+		
+		return new ResponseDTO<>(HttpStatus.OK.value(), post.getId() + "번 게시물 수정 완료");
+		
+	}
+	
+	@DeleteMapping("/post/{id}")
+	@ResponseBody
+	public ResponseDTO<?> deletePost(@PathVariable int id){
+		
+		//postRepository.deleteById(id);
+		postService.deletePost(id);
+		
+		return new ResponseDTO<>(HttpStatus.OK.value(), id + "번 게시물 삭제완료");
+		
+	}
+	
 	
 	
 	

@@ -1,0 +1,68 @@
+package com.example.board.service;
+
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.board.domain.Post;
+import com.example.board.domain.User;
+import com.example.board.repository.PostRepository;
+
+@Service
+public class PostService {
+
+	
+	@Autowired
+	private PostRepository postRepository;
+	
+//	@Transactional //org.springframework로 import 해야됨, 무언가 잘못되면 save가 되지 않도록 하는 기능
+//	public void insertPost(Post post) {
+//		
+//		postRepository.save(post);
+//	}
+	
+	public void insertPost(Post post, User user) {
+		
+		// 추출한 유저 정보를 post객체에 넣어줘야함
+		post.setUser(user);
+		// cnt도 0으로 설정
+		post.setCnt(0); // 굳이 안해도 되긴함
+		// 설정이 끝난 post객체를 db에 저장
+		postRepository.save(post);
+	}
+	
+	public void updatePost(Post post) {
+		
+		postRepository.save(post);
+		
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Post> getPostList(Pageable pageable){
+		return postRepository.findAll(pageable);
+	}
+	
+	
+	public Post getPost(int id) {
+		Optional<Post> data = postRepository.findById(id);
+		
+		if(data.isPresent()) {
+			return data.get();
+		} else {
+			return null;
+		}
+		
+	}
+	
+	
+	
+	
+
+	
+}

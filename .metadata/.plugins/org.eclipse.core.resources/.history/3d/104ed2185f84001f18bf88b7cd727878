@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../layout/header.jsp" %>
+
+<div class="container border py-3 mt-3">
+   <div>
+      <h3>${post.title }</h3>
+   </div>
+   <div>
+      <p>${post.content }</p>
+   </div>
+   <div>
+      <p>포스트 번호 : ${post.id }</p>
+      <p>작성자 : ${post.user.id }</p>
+   </div>
+   <hr>
+   <button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
+   <a href="#" class="btn btn-warning">수정하기</a>
+   <button id="btn-delete" class="btn btn-danger">삭제하기</button>
+</div>
+
+<%@ include file="../layout/footer.jsp" %>

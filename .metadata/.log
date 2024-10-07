@@ -11408,3 +11408,6 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 
 !ENTRY org.eclipse.lsp4e 1 0 2024-10-07 16:44:05.593
 !MESSAGE [Info]	ESLint server running in node v20.16.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-07 17:42:50.395
+!MESSAGE [Info]	ESLint server running in node v20.16.0

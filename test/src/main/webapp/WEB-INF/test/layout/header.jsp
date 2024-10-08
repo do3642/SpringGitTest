@@ -12,11 +12,13 @@
 	<nav>
 		<p>네비바 영역 </p>
 		<a href="/">index</a>
-		<a href="/signup">회원가입</a>
+		
 		<c:if test="${sessionScope.principal == null }">
+		<a href="/signup">회원가입</a>
 		<a href="/login">로그인</a>
 		</c:if>
 		<c:if test="${sessionScope.principal != null }">
+		<a href="/userinfo">회원정보</a>
 		<a href="/logout">로그아웃</a>
 		</c:if>
 	</nav>

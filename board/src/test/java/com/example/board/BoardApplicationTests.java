@@ -82,7 +82,7 @@ class BoardApplicationTests {
 //		 id가 1번인 레코드를 삭제
 //		userRepository.deleteById(1);
 		
-		User user = userRepository.findById(18).get();
+		User user = userRepository.findById(1).get();
 		
 		for(int i=0; i<100; i++) {
 			Post post = new Post();

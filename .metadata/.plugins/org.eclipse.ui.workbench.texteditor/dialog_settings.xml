@@ -3,6 +3,14 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="cursor"/>
+		<item value="insert"/>
+		<item value="change"/>
+		<item value="cur"/>
+		<item value="list"/>
+		<item value="postlist"/>
+		<item value="port"/>
+		<item value="portlist"/>
 		<item value="pag"/>
 		<item value="geta"/>
 		<item value="getat"/>
@@ -10,7 +18,5 @@
 		<item value="userRepository"/>
 		<item value="re"/>
 		<item value="setAtt"/>
-		<item value="redire"/>
-		<item value="service"/>
 	</list>
 </section>

@@ -1,5 +1,7 @@
 package com.example.board.config;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -7,9 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class BoardWebMvcConfig implements WebMvcConfigurer {
 
+	@Bean
+	ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
+	
+	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		
+	
 		// 객체를 add..()안에 넣어주면됨 그래서 new로 생성자호출
 		registry.addInterceptor(new AuthInterceptor())
 		// 이렇게 마무리하면 매번 실행되기 때문에

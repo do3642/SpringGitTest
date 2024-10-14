@@ -76,9 +76,20 @@ const postObject ={
 			data: JSON.stringify(post),
 			contentType: "application/json; charset=utf-8"
 		}).done(function(response){ // 실행성공 했을 때
-			alert(response.data);
-			if(response.status == 200) 
-			location.href = "/"; //성공 후 메인페이지로
+			
+			if(response.status == 200){ //중복으로 실패해도 메인페이지로 가서 막아줌
+				alert(response.data);
+				location.href = "/";//성공 후 메인페이지로
+			}else{
+				const result = response.data;
+				let msg = '';
+				if(result.title != null)
+					msg += result.title + "\n";
+				if(result.content != null)
+					msg += result.content + "\n";
+				
+					alert(msg);
+			}
 			}).fail(function(error){
 				console.log(error);
 			});

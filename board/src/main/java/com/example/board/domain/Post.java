@@ -1,7 +1,9 @@
 package com.example.board.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -48,8 +52,13 @@ public class Post {
 	@JoinColumn(name = "userid") // 외래키 설정
 	private User user;
 	
-	
-	
+	@OneToMany(mappedBy = "post",fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@OrderBy("id desc")
+	private List<Reply> replyList;
+	//1:n 관계이기 때문에 배열로 받음 (하나의 게시물에 여러개의 댓글)
+	// mappedBy는 단방향 관계일때는 필요없음
+	//양방향 관계일때 (서로가 서로를 참조해야할 경우에 사용)
+	//양방향 관계에서 '주'인 테이블을 지정 (mappedBy 말하는듯)
 	
 
 }

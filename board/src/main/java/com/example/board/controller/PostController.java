@@ -1,9 +1,12 @@
 package com.example.board.controller;
 
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +15,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +29,7 @@ import com.example.board.domain.PageDTO;
 import com.example.board.domain.Post;
 import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
+import com.example.board.dto.PostDTO;
 import com.example.board.repository.PostRepository;
 import com.example.board.service.PostService;
 
@@ -36,6 +42,8 @@ public class PostController {
 	private PostService postService;
 	@Autowired // 서비스 불러옴
 	private PostRepository postRepository;
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@GetMapping("/post")
 	public String insertPost() {
@@ -45,7 +53,18 @@ public class PostController {
 	
 	@PostMapping("/post")
 	@ResponseBody
-	public ResponseDTO<?> insertUser(@RequestBody Post post,HttpSession session) {
+	public ResponseDTO<?> insertUser(@Valid @RequestBody PostDTO postDTO,BindingResult bindingResult,HttpSession session) {
+		
+		//유효성 검사
+		if(bindingResult.hasErrors()) {
+			Map<String, String> errors = new HashMap<>();
+			for(FieldError error : bindingResult.getFieldErrors()) {
+				errors.put(error.getField(), error.getDefaultMessage());
+			}
+			return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(),errors);
+		}
+		
+		Post post = modelMapper.map(postDTO, Post.class);
 //		System.out.println("포스트컨트롤러");
 //		
 //		User user = (User) session.getAttribute("principal");

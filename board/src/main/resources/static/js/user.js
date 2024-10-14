@@ -25,10 +25,22 @@ const userObject = {
 			data: JSON.stringify(user),
 			contentType: "application/json; charset=utf-8"
 		}).done(function(response){ // 실행성공 했을 때 
-			alert(response.data);
 			
-			if(response.status == 200) //중복으로 실패해도 메인페이지로 가서 막아줌
-				location.href = "/"; //성공 후 메인페이지로
+			
+			if(response.status == 200){ //중복으로 실패해도 메인페이지로 가서 막아줌
+				alert(response.data);
+				location.href = "/";//성공 후 메인페이지로
+			}else{
+				const result = response.data;
+				let msg = '';
+				if(result.username != null)
+					msg += result.username + "\n";
+				if(result.password != null)
+					msg += result.password + "\n";
+				if(result.email != null)
+					msg += result.email;
+				alert(msg);
+			}
 		}).fail(function(error){
 			console.log(error);
 		});

@@ -9,6 +9,8 @@ import javax.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,6 +27,7 @@ import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
 import com.example.board.dto.UserDTO;
 import com.example.board.repository.UserRepository;
+import com.example.board.security.UserDetailsImpl;
 import com.example.board.service.UserService;
 
 @Controller
@@ -40,6 +43,8 @@ public class UserController {
 	@Autowired
 	private ModelMapper modelMapper;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/auth/insertuser")
 	public String insertUser() {
@@ -102,14 +107,14 @@ public class UserController {
 	}
 	
 	@GetMapping("/auth/userinfo")
-	public String userInfo(HttpSession session, Model model) {
-		
-		User user = (User) session.getAttribute("principal");
-//		System.out.println(user);
-		
-		User userInfo = userRepository.findById(user.getId()).get();
-		
-		model.addAttribute("userInfo", userInfo);
+	public String userInfo() {
+	//public String userInfo(HttpSession session, Model model) {
+//		User user = (User) session.getAttribute("principal");
+////		System.out.println(user);
+//		
+//		User userInfo = userRepository.findById(user.getId()).get();
+//		
+//		model.addAttribute("userInfo", userInfo);
 		
 		return "user/userinfo";
 	}
@@ -132,16 +137,21 @@ public class UserController {
 	
 	@PutMapping("/auth/update")
 	@ResponseBody
-	public ResponseDTO<?> update(@RequestBody User updateData,HttpSession session) {
+	public ResponseDTO<?> update(@RequestBody User updateData,@AuthenticationPrincipal UserDetailsImpl principal) {
+	//public ResponseDTO<?> update(@RequestBody User updateData,HttpSession session) {
 //		System.out.println(updateData);
 		User userInfo = userRepository.findById(updateData.getId()).get();
 		if(!updateData.getPassword().equals(""))
-			userInfo.setPassword(updateData.getPassword());
+			userInfo.setPassword(passwordEncoder.encode(updateData.getPassword()));
 		
 		userInfo.setEmail(updateData.getEmail());
+		
+		
 		userRepository.save(userInfo);
 		
-		session.setAttribute("principal", userInfo); // 세션 데이터가 로그인할때만 갱신되기 때문에 새로 갱신 시켜줌
+//		session.setAttribute("principal", userInfo); // 세션 데이터가 로그인할때만 갱신되기 때문에 새로 갱신 시켜줌
+		
+		principal.setUser(userInfo);
 		
 		return new ResponseDTO<>(HttpStatus.OK.value(), "회원 정보 수정 완료");
 	}

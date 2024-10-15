@@ -36,8 +36,9 @@ public class UserDetailsImpl implements UserDetails{
 	public String getPassword() {
 
 		
-		return "{noop}" + user.getPassword();
-		// "{noop}" = 암호화하지 않겠다 
+//		return "{noop}" + user.getPassword();
+		// "{noop}" = 암호화하지 않겠다
+		return  user.getPassword();
 	}
 
 	@Override

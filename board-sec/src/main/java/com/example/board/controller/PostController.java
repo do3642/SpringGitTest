@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,6 +32,7 @@ import com.example.board.domain.ResponseDTO;
 import com.example.board.domain.User;
 import com.example.board.dto.PostDTO;
 import com.example.board.repository.PostRepository;
+import com.example.board.security.UserDetailsImpl;
 import com.example.board.service.PostService;
 
 
@@ -53,7 +55,7 @@ public class PostController {
 	
 	@PostMapping("/post")
 	@ResponseBody
-	public ResponseDTO<?> insertUser(@Valid @RequestBody PostDTO postDTO,BindingResult bindingResult,HttpSession session) {
+	public ResponseDTO<?> insertUser(@Valid @RequestBody PostDTO postDTO,BindingResult bindingResult,@AuthenticationPrincipal UserDetailsImpl principal) {
 		
 		//유효성 검사 아래 어드바이스로 옮김
 //		if(bindingResult.hasErrors()) {
@@ -68,22 +70,11 @@ public class PostController {
 		
 		
 		Post post = modelMapper.map(postDTO, Post.class);
-//		System.out.println("포스트컨트롤러");
-//		
-//		User user = (User) session.getAttribute("principal");
-//		System.out.println(user.getUsername());
-//		
-//		post.setUser(user);
-//		
-//		postService.insertPost(post);
-//		return new ResponseDTO<>(HttpStatus.OK.value(),"게시물 등록 완료");
-//				
-		//선생님 풀이
-		
+
 		// 세션에 있는 유저 정보를 추출
-		User principal = (User) session.getAttribute("principal");
+		User user = (User) principal.getUser();
 		
-		postService.insertPost(post,principal);
+		postService.insertPost(post,user);
 		
 		// 저장이 끝나면 결과를 응답
 		return new ResponseDTO<>(HttpStatus.OK.value(),"게시물 등록 완료");

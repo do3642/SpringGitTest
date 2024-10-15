@@ -21,6 +21,9 @@ public class SecurityConfig {
 		
 		http.formLogin().loginPage("/auth/login"); // 권한없는 페이지 방문 시 로그인 페이지로 넘김
 		
+		http.logout().logoutUrl("/auth/logout").logoutSuccessUrl("/");
+		//로그아웃 요청주소, 로그아웃 한 뒤 url까지 설정
+		
 		return http.build();
 	}
 }

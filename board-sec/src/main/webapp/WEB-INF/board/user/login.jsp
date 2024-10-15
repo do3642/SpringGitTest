@@ -4,7 +4,7 @@
   <%@ include file="../layout/header.jsp" %>
   
   <div class="container mt-3">
-   <form>
+   <form method="post" action="/auth/login">
      <div class="mb-3 mt-3">
        <label for="username" class="form-label">userName:</label>
        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
@@ -16,5 +16,5 @@
      <button id="btn-login" type="submit" class="btn btn-primary">로그인</button>
    </form>
 </div>
- <script src="/js/login.js"></script>
+<!--  <script src="/js/login.js"></script> -->
   <%@ include file="../layout/footer.jsp" %>

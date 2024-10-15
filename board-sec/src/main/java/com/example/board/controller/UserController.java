@@ -46,6 +46,7 @@ public class UserController {
 		return "user/insertUser";
 	}
 	
+	
 	@PostMapping("/auth/insertuser")
 	@ResponseBody // 이게 없으면 jsp파일로 return하기 때문에 넣어야함
 	public ResponseDTO<?> insertUser(@Valid @RequestBody UserDTO userDTO, BindingResult bindingResult) {
@@ -99,33 +100,6 @@ public class UserController {
 	@GetMapping("/auth/login")
 	public String login() {
 		return "user/login";
-	}
-	
-	@PostMapping("/auth/login")
-	@ResponseBody
-	public ResponseDTO<?> login(@RequestBody User user, HttpSession session) { // 로그인정보를 담기위해 httpsession 추가
-		//없는 아이디 // 요즘은 뭐틀렸는지 안알려줌 보안때문에
-		User findUser = userService.getUser(user.getUsername());
-		if(findUser.getUsername() == null) {
-			//아이디 틀림
-			return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(),"없는 아이디");
-		}else {
-			// 아이디 맞음 -> 비번 검사
-			if(findUser.getPassword().equals(user.getPassword())) {
-				// 로그인 성공
-				session.setAttribute("principal", findUser); // principal 키포지션의 이름은 변수지만 관용임, 로그인정보 담기
-				return new ResponseDTO<>(HttpStatus.OK.value(),user.getUsername() + "님 로그인 성공");
-			}else {
-				// 비번 틀림
-				return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(),"비밀번호 틀림");
-			} // 안쪽 if문 종료
-			
-		} // 바깥 else문 종료
-	}
-	@GetMapping("/auth/logout")
-	public String logout(HttpSession session) {
-		session.invalidate(); // 기존 세션 모든 정보 날리는 메서드
-		return "redirect:/";
 	}
 	
 	@GetMapping("/auth/userinfo")

@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+   <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+ 
+ <!--로그인 했냐 안했냐 (if같은거) / 로그인하면 true  -->
+ 	<sec:authorize access="isAuthenticated()">
+ 		<sec:authentication property="principal" var="principal"/> 
+ 		<!--마지막에 /(슬래쉬)넣으면 닫는태그 없이 마무리 할 수있음  -->
+ 		<!-- property는  로그인 한 사람의 정보 / var는 jsp에서 사용하려고 뺀 변수  -->
+ 		
+ 	</sec:authorize>
 <!DOCTYPE html>
 <html>
    <head>
@@ -25,7 +34,7 @@
             <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-         	<c:if test="${sessionScope.principal == null }">
+         	<c:if test="${principal == null }">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                <li class="nav-item"><a class="nav-link active"
                   aria-current="page" href="/auth/insertuser">회원가입</a></li>
@@ -35,7 +44,7 @@
                   aria-disabled="true">Disabled</a></li>
             </ul>
             </c:if>
-            <c:if test="${sessionScope.principal != null }">
+            <c:if test="${principal != null }">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                <li class="nav-item"><a class="nav-link" href="/auth/userinfo">회원정보</a></li>
                <li class="nav-item"><a class="nav-link" href="/auth/logout">로그아웃</a></li>

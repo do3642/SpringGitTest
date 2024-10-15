@@ -1,6 +1,7 @@
 package com.example.board.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +15,14 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Transactional //org.springframework로 import 해야됨, 무언가 잘못되면 save가 되지 않도록 하는 기능
 	public void insertUser(User user) {
 		user.setRole(RoleType.USER);
+		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
 		userRepository.save(user);
 	}

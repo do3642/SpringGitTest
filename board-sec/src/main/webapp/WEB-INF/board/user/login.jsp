@@ -13,6 +13,7 @@
        <label for="password" class="form-label">Password:</label>
        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
      </div>
+     <%-- <input type="text" name="${_csrf.parameterName }" value="${_csrf.token }"> --%>
      <button id="btn-login" type="submit" class="btn btn-primary">로그인</button>
    </form>
 </div>

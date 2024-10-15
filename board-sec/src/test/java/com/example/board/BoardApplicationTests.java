@@ -3,6 +3,7 @@ package com.example.board;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.board.domain.Post;
 import com.example.board.domain.User;
@@ -82,16 +83,25 @@ class BoardApplicationTests {
 //		 id가 1번인 레코드를 삭제
 //		userRepository.deleteById(1);
 		
-		User user = userRepository.findById(1).get();
+//		User user = userRepository.findById(1).get();
+//		
+//		for(int i=0; i<100; i++) {
+//			Post post = new Post();
+//			post.setTitle("임시 게시물 제목"+ i);
+//			post.setContent("임시 게시물 내용" + i);
+//			post.setUser(user);
+//			
+//			postRepository.save(post);
+//		}
 		
-		for(int i=0; i<100; i++) {
-			Post post = new Post();
-			post.setTitle("임시 게시물 제목"+ i);
-			post.setContent("임시 게시물 내용" + i);
-			post.setUser(user);
-			
-			postRepository.save(post);
-		}
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String pw = "1234abcd@#$@#";
+		String encodePw = encoder.encode(pw);
+		
+		System.out.println("암호화 전 비번 : "+pw);
+		System.out.println("암호화 후 비번 : "+encodePw);
+		System.out.println("두개 비교 : " + pw.equals(encodePw));
+		System.out.println("진짜 두개 비교 : " + encoder.matches(pw, encodePw));
 		
 	}
 

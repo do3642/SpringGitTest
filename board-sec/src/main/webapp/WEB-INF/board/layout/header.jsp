@@ -51,8 +51,8 @@
                <li class="nav-item"><a class="nav-link" href="/post">게시물 등록</a></li>
             </ul>
             </c:if>
-            <form class="d-flex" role="search">
-               <input class="form-control me-2" type="search" placeholder="Search"
+            <form class="d-flex" role="search" method="get" action="/post/search">
+               <input class="form-control me-2" type="search" placeholder="Search" name="keyword"  value="${keyword}"
                   aria-label="Search">
                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>

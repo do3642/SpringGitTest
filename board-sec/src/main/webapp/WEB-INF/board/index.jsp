@@ -20,10 +20,10 @@
       <br>
       <ul class="pagination justify-content-between">
          <li class="page-item <c:if test="${postList.first}">disabled</c:if>"> <!--부트스트랩의 클래스로 disabled  -->
-            <a class="page-link" href="?page=${postList.number-1}">이전</a>
+            <a class="page-link" href="/post/search?keyword=${keyword}&page=${postList.number-1}">이전</a>
          </li>
          <li class="page-item <c:if test="${postList.last}">disabled</c:if>">
-            <a class="page-link" href="?page=${postList.number+1}">다음</a>
+            <a class="page-link" href="/post/search?keyword=${keyword}&page=${postList.number+1}">다음</a>
          </li>
          
       </ul>
@@ -31,18 +31,18 @@
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="page-item ${pageDTO.prev ? '' : 'disabled' }">
-            <a class="page-link" href="?page=${pageDTO.startPage - 2}" aria-label="Previous">
+            <a class="page-link" href="/post/search?keyword=${keyword}&page=${pageDTO.startPage - 2}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
           <c:forEach var="i" begin="${pageDTO.startPage}" end="${pageDTO.endPage}">
           <li class="page-item ${i == pageDTO.page.number+1 ? 'active' : ''}">
-          <a class="page-link" href="?page=${i-1}">${i}</a>
+          <a class="page-link" href="/post/search?keyword=${keyword}&page=${i-1}">${i}</a>
           </li>
           </c:forEach>
         
           <li class="page-item ${pageDTO.next ? '' : 'disabled' }">
-            <a class="page-link" href="?page=${pageDTO.endPage}" aria-label="Next">
+            <a class="page-link" href="/post/search?keyword=${keyword}&page=${pageDTO.endPage}" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>

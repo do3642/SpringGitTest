@@ -69,6 +69,20 @@ public class PostService {
 		
 	}
 	
+	public List<Post> search(String keyword) {
+		
+		 List<Post> list = postRepository.findByTitleContaining(keyword);
+		
+		return list;
+		
+	}
+	public Page<Post> search(String keyword, Pageable pageable) {
+		
+		 Page<Post> result = postRepository.findByTitleContaining(keyword, pageable);
+		
+		return result;
+		
+	}
 	
 	
 	

@@ -1,6 +1,7 @@
 package com.example.board.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.board.domain.PageDTO;
@@ -105,6 +107,18 @@ public class PostController {
 		
 		return "index";
 	}
+	@GetMapping("/post/search")
+	public String search(@RequestParam String keyword, Model model, @PageableDefault(size =2, sort = "id", direction = Direction.DESC) Pageable pageable) {
+	
+		Page<Post> result = postService.search(keyword,pageable);
+		model.addAttribute("postList",result);
+		model.addAttribute("pageDTO", new PageDTO(result));
+		model.addAttribute("keyword",keyword);
+		
+		return "index";
+	}
+	
+	
 	
 	@GetMapping("/post/{id}")
 	public String getPost(@PathVariable int id, Model model) {

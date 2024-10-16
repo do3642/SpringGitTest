@@ -44,6 +44,8 @@ implementation group: 'org.springframework.boot', name: 'spring-boot-starter-sec
 testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 // https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs
 implementation group: 'org.springframework.security', name: 'spring-security-taglibs'
+// https://mvnrepository.com/artifact/com.google.code.gson/gson
+implementation group: 'com.google.code.gson', name: 'gson'
 
 	
 	

@@ -2,9 +2,11 @@ package com.example.board.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.example.board.domain.User;
 
@@ -14,11 +16,26 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class UserDetailsImpl implements UserDetails{
+public class UserDetailsImpl implements UserDetails, OAuth2User{
 	
 	private static final long serialVersionUID = 1L;
 	private User user;
+	
+	//구글에서 조회한 유저 정보
+	private Map<String, Object> attributes;
+	
+	//기본, 카카오 로그인 시 사용하는 생성자
+	public UserDetailsImpl(User user) {
+		this.user = user;
+	}
+	
+	//OAuth2를 이용해서 로그인할 경우 사용할 생성자
+	public UserDetailsImpl(User user, Map<String, Object> attributes) {
+		this.user = user;
+		this.attributes = attributes;
+	}
+	
+	//------------------------------
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -75,5 +92,19 @@ public class UserDetailsImpl implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	@Override
+	public Map<String, Object> getAttributes() {
+		// TODO Auto-generated method stub
+		return attributes;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

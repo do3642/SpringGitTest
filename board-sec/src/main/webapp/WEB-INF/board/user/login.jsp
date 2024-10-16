@@ -19,6 +19,9 @@
    <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=7b9c00e8391bcd0e9a9169bd52896a6e&redirect_uri=http://localhost:8888/oauth/kakao">
    		<img src="/img/kakao_login-btn.png">
    </a>
+   <a href="../oauth2/authorization/google">
+   		<img src="/img/google_login.png">
+   </a>
 </div>
 <!--  <script src="/js/login.js"></script> -->
   <%@ include file="../layout/footer.jsp" %>

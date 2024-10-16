@@ -27,7 +27,7 @@ public class KakaoService {
 		HttpHeaders header = new HttpHeaders();
 		header.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 		
-		//토큰 갱신하기 항목에 있음
+		//카카오 로그인 요청-본문 항목에 있음
 		//스프링 컬렉션이고 하나의 키에 여러개의 벨류 세팅이 가능함 요청,응답할때 주로 사용됨
 		MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
 		body.add("grant_type", "authorization_code");

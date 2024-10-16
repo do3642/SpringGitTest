@@ -2966,3 +2966,322 @@ java.lang.Exception: Resource '/board-sec/src/main/resources/META-INF' is not lo
 	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:410)
 	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:388)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-16 17:34:24.928
+!MESSAGE Classpath changed for project: board-sec
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:25.029
+!MESSAGE [Info]	ESLint server running in node v20.16.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:27.011
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.5.4 from path "D:\LYC\sts-4.25.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.3.202408270415\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:27.014
+!MESSAGE [Info]	Typescript Server version info: {version=5.5.4, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:34:27.017
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/build.gradle
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:34:27.031
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:34:27.034
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:27.037
+!MESSAGE [Log]	cancelled
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:34:27.039
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:34:27.041
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:27.047
+!MESSAGE [Log]	cancelled
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:34:46.867
+!MESSAGE [Info]	ESLint server running in node v20.16.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:40:04.587
+!MESSAGE [Info]	ESLint server running in node v20.16.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:40:04.712
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.5.4 from path "D:\LYC\sts-4.25.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.3.202408270415\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:40:04.714
+!MESSAGE [Info]	Typescript Server version info: {version=5.5.4, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:04.819
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:04.830
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:04.831
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:04.836
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-16 17:40:16.646
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:17.882
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:17.886
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:17.890
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:17.895
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:21.280
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:21.284
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:21.287
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:21.292
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:23.204
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:23.208
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:23.212
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:23.215
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:24.780
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:24.783
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:24.787
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:24.791
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:25.364
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:26.483
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:26.487
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:26.491
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:26.495
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:28.464
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:28.467
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:28.471
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:28.475
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:40:28.479
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:41:13.071
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:41:13.075
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:41:13.079
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:41:13.082
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:41:13.086
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/java/com/example/board/config/SecurityConfig.java
+
+!ENTRY org.eclipse.jface.text 4 0 2024-10-16 17:49:59.783
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	... 11 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-10-16 17:50:20.017
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	... 11 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-10-16 17:50:21.545
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	... 11 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-10-16 17:50:22.056
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	... 11 more
+
+!ENTRY org.eclipse.jface.text 4 0 2024-10-16 17:56:57.408
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+!STACK 0
+java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
+	... 11 more
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:58:39.117
+!MESSAGE [Info]	ESLint server running in node v20.16.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:58:39.239
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.5.4 from path "D:\LYC\sts-4.25.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.3.202408270415\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-10-16 17:58:39.241
+!MESSAGE [Info]	Typescript Server version info: {version=5.5.4, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:39.347
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:39.350
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:42.336
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:42.339
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:43.560
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:43.563
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-16 17:58:45.868
+!MESSAGE Could not resolve completion items due to timeout after 500 milliseconds in `completionItem/resolve`
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.completion.LSCompletionProposal.resolveItem(LSCompletionProposal.java:372)
+	at org.eclipse.lsp4e.operations.completion.LSCompletionProposal.getAdditionalProposalInfo(LSCompletionProposal.java:338)
+	at org.eclipse.lsp4e.operations.completion.LSCompletionProposal.getAdditionalProposalInfo(LSCompletionProposal.java:1)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:116)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-16 17:58:46.533
+!MESSAGE [Error]	Unexpected resource file:///D:/LYC/springboot/board-sec/src/main/resources/application.properties

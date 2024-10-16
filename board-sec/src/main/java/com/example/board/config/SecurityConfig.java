@@ -28,6 +28,9 @@ public class SecurityConfig {
 		http.logout().logoutUrl("/auth/logout").logoutSuccessUrl("/");
 		//로그아웃 요청주소, 로그아웃 한 뒤 url까지 설정
 		
+		http.oauth2Login();
+		
+		
 		return http.build();
 	}
 	

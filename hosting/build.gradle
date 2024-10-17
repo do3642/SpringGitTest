@@ -36,6 +36,9 @@ dependencies {
 	implementation group: 'javax.servlet', name: 'jstl'
 	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
+	// https://mvnrepository.com/artifact/io.awspring.cloud/spring-cloud-aws-starter-s3
+implementation group: 'io.awspring.cloud', name: 'spring-cloud-aws-starter-s3', version: '3.1.1'
+	
 }
 
 tasks.named('test') {

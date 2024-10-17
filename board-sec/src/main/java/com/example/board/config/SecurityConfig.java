@@ -1,5 +1,6 @@
 package com.example.board.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,9 +11,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.example.board.security.OAuth2UserDetailsServiceImpl;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Autowired
+	private OAuth2UserDetailsServiceImpl oAuth2UserDetailsServiceImpl;
+	
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
@@ -28,7 +35,8 @@ public class SecurityConfig {
 		http.logout().logoutUrl("/auth/logout").logoutSuccessUrl("/");
 		//로그아웃 요청주소, 로그아웃 한 뒤 url까지 설정
 		
-		http.oauth2Login();
+		//시큐리티에 oauth2로그인 사용할꺼다.소셜로그인처리한애들의 endpoint설정.우리가지정한user서비스를 통해?진다
+		http.oauth2Login().userInfoEndpoint().userService(oAuth2UserDetailsServiceImpl);
 		
 		
 		return http.build();
@@ -41,9 +49,9 @@ public class SecurityConfig {
 		
 	}
 	
-	// 패스워드 암호화를 편하게 사용하기 위해 생성
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+	// 패스워드 암호화를 편하게 사용하기 위해 생성 / OAuth2UserDetailsServiceImpl이랑 순환오류로 commonconfig클래스로 옮김
+//	@Bean
+//	PasswordEncoder passwordEncoder() {
+//		return new BCryptPasswordEncoder();
+//	}
 }

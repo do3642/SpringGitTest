@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>상품등록 페이지</h1>
-	<form id="product-form" action="/product" method="POST" >
+	<form id="product-form" action="/product" method="POST">
 		상품명 : <input type="text" name="name"><br>
 		상품설명 : <input type="text" name="description"><br>
 		가격 : <input type="text" name="price"><br>

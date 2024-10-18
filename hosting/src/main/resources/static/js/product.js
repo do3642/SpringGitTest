@@ -25,7 +25,7 @@ form.addEventListener("submit", async (e) =>{
 	//버킷에서 이미지 저장이 끝나면 해당 이미지 URL을 클라이언트한테 되돌려줌 		
 	const fileUrl = s3uploadResponse.url.split("?")[0];
 	
-	console.log(fileUrl);
+	//console.log(fileUrl);
 	/*fetch(`/presigned-url?filename=${name}`)
 		.then((response) => response.text())
 		.then((result) => {
@@ -42,5 +42,11 @@ form.addEventListener("submit", async (e) =>{
 		}).catch((error)=>{
 			console.log(error)
 		});*/
+		
+	// 히든 인풋에 값을 넣기 위함	
+	document.querySelector("#imgUrl").value = fileUrl;
 	
+	// 기존에는 기본동작막고 ajax로 보냈는데 form자체에 submit하면 서버로 날라감, form에 메소드 액션있어야함
+	form.submit();
+		
 })
